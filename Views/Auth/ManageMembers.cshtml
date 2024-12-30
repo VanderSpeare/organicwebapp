@@ -1,0 +1,29 @@
+@model IEnumerable<WebApp.Models.Member>
+
+<h2>Quản lý thành viên</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+                    <tr>
+                        <td>@member.Email</td>
+                        <td>@member.Name</td>
+                        <td>
+                            <a asp-action="EditMember" asp-route-id="@member.MemberId">Sửa</a>
+                            |
+                            <a asp-action="DeleteMember" asp-route-id="@member.MemberId" onclick="return confirm('Bạn có chắc chắn muốn xóa thành viên này không?');">Xóa</a>
+                        </td>
+                    </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="CreateMember">Thêm thành viên mới</a>

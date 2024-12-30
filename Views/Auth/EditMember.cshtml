@@ -1,0 +1,28 @@
+@model WebApp.Models.Member
+
+<h2>Sửa thành viên</h2>
+
+<form asp-action="EditMember" method="post">
+    <input type="hidden" asp-for="MemberId" />
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" required />
+    </div>
+    <div>
+        <label>Password:</label>
+        <input asp-for="Password" type="password" required />
+    </div>
+    <div>
+        <label>Name:</label>
+        <input asp-for="Name" required />
+    </div>
+    <div>
+        <label>Given Name:</label>
+        <input asp-for="GivenName" required />
+    </div>
+    <div>
+        <label>Surname:</label>
+        <input asp-for="Surname" required />
+    </div>
+    <button type="submit">Cập nhật</button>
+</form>

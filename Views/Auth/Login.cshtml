@@ -1,0 +1,41 @@
+@model LoginModel
+
+<!-- Contact Form Begin -->
+<div class="contact-form spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact__form__title">
+                    <h2>Login Member</h2>
+                </div>
+            </div>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <form method="post">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <input type="email" asp-for="Eml" placeholder="Email">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="password" asp-for="Pwd" placeholder="Password">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <label asp-for="Rem" class="form-label">
+                        Remember me!
+                    </label>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <a href="/Auth/ForgotPassword">Forgot Password?</a>
+                    <a href="/Auth/ChangePassword">ChangePassword</a>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="checkbox" asp-for="Rem">
+                </div>
+                <div class="col-lg-12 text-center">
+                    <button type="submit" class="site-btn">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Contact Form End -->

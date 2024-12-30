@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Xác thực mã OTP";
+}
+
+<h2>Xác thực mã OTP</h2>
+
+@if (TempData["Message"] != null)
+{
+                    <div>@TempData["Message"]</div>
+}
+
+<form asp-action="VerifyOtp" method="post">
+    <input type="hidden" name="email" value="@ViewBag.Email" />
+    <label for="otp">Nhập mã OTP:</label>
+    <input type="text" id="otp" name="otp" required />
+    <button type="submit">Xác thực</button>
+</form>
